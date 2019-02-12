@@ -29,7 +29,7 @@ end
 def make_new_sims
 	runtimes = available_runtimes()
 
-	device_yml = YAML.load_file('bum.yml')
+	device_yml = YAML.load_file('peach.yml')
 	puts device_yml
 	device_yml.each do |properties|
 		runtime = runtimes[properties["runtime"]]
