@@ -1,11 +1,11 @@
 - name: Small Phone
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPhone SE
 - name: Big Phone
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPhone Xs Max
 - name: Just Phone
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPhone 8
 - name: Polaris Snapshot
   runtime: iOS 11.4
@@ -17,17 +17,17 @@
   runtime: iOS 12.0
   device_type: iPhone 7
 - name: MerchantKit
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPhone 7
 - name: Shopify Snapshot
   runtime: iOS 12.0
   device_type: iPhone 8
 - name: iPad
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPad Pro (9.7-inch)
 - name: iPhone X
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPhone X
 - name: POS Next iPad
-  runtime: iOS 12.1
+  runtime: iOS 12.2
   device_type: iPad Pro (9.7-inch)
