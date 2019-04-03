@@ -1,4 +1,6 @@
-# Peach 🍑
+![](/elpeacho.png)
+
+# El Peacho 
 Make iOS Simulators with Ruby (and simctl).
 
 # Why?
