@@ -23,6 +23,28 @@ class DeviceTest < Minitest::Test
 		assert_equal("iPhone 7", name)
 	end
 
+	def test_equality
+		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: nil)
+		d2 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: "this is real")
+		assert_equal d1, d2
+		d2 = Device.new(name:"newish", device_type: "bogus", runtime: "yes", udid: "this is real")
+		refute_equal d1, d2
+		d2 = Device.new(name:"new", device_type: "real i swear", runtime: "yes", udid: "this is real")
+		refute_equal d1, d2
+		d2 = Device.new(name:"new", device_type: "bogus", runtime: "noe", udid: "this is real")
+		refute_equal d1, d2
+	end
+
+	def test_exists
+		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: nil)
+		refute d1.exists?
+		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: "bogus_udid")
+		refute d1.exists?
+
+		devices = Device.current_devices(xc: @xc)
+		assert devices.first.exists?
+	end
+
   # def test_device_created_and_deleted
     # device = Device.new("test iphone", "iphone x", "ios 12.0")
     # refute device.exists?

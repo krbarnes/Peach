@@ -6,6 +6,11 @@ class XC
 		@device_types = init_device_types
 	end
 
+	def exists(device:)
+		return false unless device.udid
+		Device.current_devices.include?(self)
+	end
+
 	def runtime_name(identifier)
 		return @runtimes[identifier]
 	end

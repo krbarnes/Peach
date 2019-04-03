@@ -11,7 +11,9 @@ class Device
 	end
 
 	def exists?
-		return !!@udid
+		return false unless @udid
+		#could pass XC in? Make this a class function?
+		Device.current_devices(xc: XC.new).include?(self)
 	end
 
 	def create
@@ -19,6 +21,17 @@ class Device
 
 	def delete
 	end
+
+
+	alias_method :eql?, :==
+	def ==(o)
+		o.class == self.class &&
+		o.name == @name &&
+		o.device_type == @device_type &&
+		o.runtime == runtime
+	end
+
+	#class functions
 
 	def self.current_devices(xc:)
 		devices = Array.new
