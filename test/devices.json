@@ -1,0 +1,38 @@
+{
+  "devices": {
+    "com.apple.CoreSimulator.SimRuntime.iOS-12-0": [{
+        "availability": "(available)",
+        "state": "Shutdown",
+        "isAvailable": true,
+        "name": "Shopify Unit Test",
+        "udid": "D2385B33-B4AB-421E-BE0D-7511CEF66DFC",
+        "availabilityError": ""
+      },
+      {
+        "availability": "(available)",
+        "state": "Shutdown",
+        "isAvailable": true,
+        "name": "Shopify Snapshot",
+        "udid": "8434EAB0-CA39-434D-9900-85E4E8D7ECB9",
+        "availabilityError": ""
+      }
+    ],
+    "com.apple.CoreSimulator.SimRuntime.iOS-11-4": [{
+        "availability": "(available)",
+        "state": "Shutdown",
+        "isAvailable": true,
+        "name": "Rolodex Snapshot",
+        "udid": "38E2389B-527F-4DAF-BC98-4F495C45BCF8",
+        "availabilityError": ""
+      },
+      {
+        "availability": "(available)",
+        "state": "Shutdown",
+        "isAvailable": true,
+        "name": "Polaris Snapshot",
+        "udid": "A511B981-A1A5-4A93-8D25-3427D869DD9B",
+        "availabilityError": ""
+      }
+    ]
+  }
+}
