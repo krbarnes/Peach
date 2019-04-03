@@ -6,7 +6,8 @@ Gem::Specification.new do |s|
   s.description = 'Manage your iOS simulators with a yml file.'
   s.authors     = ['Kevin Barnes']
   s.email       = 'iamkevb@gmail.com'
-  s.files       = ['lib/peach.rb', 'lib/peach/device.rb', 'lib/peach/util.rb', 'lib/peach/xc.rb']
+  s.files       = ['lib/peach.rb', 'lib/peach/device.rb', 'lib/peach/xc.rb']
   s.homepage    = 'http://rubygems.org/gems/peach'
   s.license     = 'MIT'
+  s.add_runtime_dependency 'plist'
 end

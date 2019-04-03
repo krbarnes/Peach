@@ -3,7 +3,6 @@
 require 'json'
 require 'yaml'
 require 'peach/device'
-require 'peach/util'
 require 'peach/xc'
 
 class Peach
