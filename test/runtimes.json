@@ -1,0 +1,64 @@
+{
+  "runtimes" : [
+    {
+      "bundlePath" : "\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 9.3.simruntime",
+      "availabilityError" : "",
+      "buildversion" : "13E233",
+      "availability" : "(available)",
+      "isAvailable" : true,
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.iOS-9-3",
+      "version" : "9.3",
+      "name" : "iOS 9.3"
+    },
+    {
+      "bundlePath" : "\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 11.4.simruntime",
+      "availabilityError" : "",
+      "buildversion" : "15F79",
+      "availability" : "(available)",
+      "isAvailable" : true,
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.iOS-11-4",
+      "version" : "11.4",
+      "name" : "iOS 11.4"
+    },
+    {
+      "bundlePath" : "\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS 12.0.simruntime",
+      "availabilityError" : "",
+      "buildversion" : "16A366",
+      "availability" : "(available)",
+      "isAvailable" : true,
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.iOS-12-0",
+      "version" : "12.0",
+      "name" : "iOS 12.0"
+    },
+    {
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Developer\/Library\/CoreSimulator\/Profiles\/Runtimes\/iOS.simruntime",
+      "availabilityError" : "",
+      "buildversion" : "16E226",
+      "availability" : "(available)",
+      "isAvailable" : true,
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.iOS-12-2",
+      "version" : "12.2",
+      "name" : "iOS 12.2"
+    },
+    {
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/AppleTVOS.platform\/Developer\/Library\/CoreSimulator\/Profiles\/Runtimes\/tvOS.simruntime",
+      "availabilityError" : "",
+      "buildversion" : "16L225",
+      "availability" : "(available)",
+      "isAvailable" : true,
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.tvOS-12-2",
+      "version" : "12.2",
+      "name" : "tvOS 12.2"
+    },
+    {
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/WatchOS.platform\/Developer\/Library\/CoreSimulator\/Profiles\/Runtimes\/watchOS.simruntime",
+      "availabilityError" : "",
+      "buildversion" : "16T224",
+      "availability" : "(available)",
+      "isAvailable" : true,
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.watchOS-5-2",
+      "version" : "5.2",
+      "name" : "watchOS 5.2"
+    }
+  ]
+}
