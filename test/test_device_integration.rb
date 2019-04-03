@@ -3,14 +3,14 @@ require 'peach'
 
 class DeviceIntegrationTest < Minitest::Test
 
-  # def test_device_created_and_deleted
-  #   device = Device.new(name: "🍑👌", device_type: "iPhone 7", runtime: "iOS 12.2")
-  #   refute device.exists?
-  #   device.create
-  #   assert device.exists?
-  #   device.delete
-  #   assert_false
-  # end
+  def test_device_created_and_deleted
+    device = Device.new(name: "🍑👌", device_type: "iPhone 7", runtime: "iOS 12.2")
+    refute device.exists?
+    device.create
+    assert device.exists?
+    device.destroy
+    refute device.exists?
+  end
 
   def test_destroy_all
   	xc = XC.new
