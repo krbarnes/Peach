@@ -15,9 +15,9 @@ Good Luck!
 ## Install
 
 gem build peach.gemspec
-gem install ./peach-[version string]
+gem install ./elpeacho-[version string]
 
 ## Publish
 
 curl -u iamkevb https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
-gem push hola-[version string]
+gem push elpeacho-[version string]
