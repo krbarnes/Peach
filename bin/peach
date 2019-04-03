@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'peach'
+
+peach = Peach.new
+
+input_array = ARGV
+
+if input_array.empty?
+	peach.createDevices
+elsif input_array.first == "destroy"
+		peach.destroy_all
+else
+	peach.createDevices(input_array[0])
+end

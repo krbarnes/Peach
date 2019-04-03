@@ -5,6 +5,7 @@ GEM
     minitest (5.11.3)
     mocha (1.8.0)
       metaclass (~> 0.0.1)
+    plist (3.5.0)
 
 PLATFORMS
   ruby
@@ -12,6 +13,7 @@ PLATFORMS
 DEPENDENCIES
   minitest
   mocha
+  plist
 
 BUNDLED WITH
    1.17.3

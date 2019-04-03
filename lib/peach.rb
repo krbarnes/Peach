@@ -7,11 +7,11 @@ require 'peach/xc'
 
 class Peach
 
-	def self.destroy_all
+	def destroy_all
 		Device.destroy_all(xc: XC.new)
 	end
 
-	def self.createDevices(peachFile = 'peach.yml')
+	def createDevices(peachFile = 'peach.yml')
 		peaches = YAML.load_file(peachFile)
 		peaches.each do |properties|
 			peach_name = properties["name"]
