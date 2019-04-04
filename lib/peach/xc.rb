@@ -19,6 +19,14 @@ class XC
 		return @device_types[identifier]
 	end
 
+	def runtime_invalid(runtime)
+		@runtimes.select { |_, val| val == runtime }.empty?
+	end
+
+	def device_type_invalid(device_type)
+		@device_types.select { |_, val| val == device_type }.empty?
+	end
+
 	def init_runtimes
 		runtimes_json = JSON.parse(load_runtimes())
 		runtimes = runtimes_json['runtimes']

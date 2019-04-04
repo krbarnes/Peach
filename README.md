@@ -1,6 +1,6 @@
 ![](/elpeacho.png)
 
-# El Peacho 
+# El Peacho
 Make iOS Simulators with Ruby (and simctl).
 
 # Why?
@@ -16,10 +16,10 @@ Good Luck!
 
 ## Install
 
-gem build peach.gemspec
-gem install ./elpeacho-[version string]
+* gem build peach.gemspec
+* gem install ./elpeacho-[version string]
 
 ## Publish
 
-curl -u iamkevb https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
-gem push elpeacho-[version string]
+* curl -u iamkevb https://rubygems.org/api/v1/api_key.yaml > ~/.gem/credentials; chmod 0600 ~/.gem/credentials
+* gem push elpeacho-[version string]

@@ -24,4 +24,16 @@ class XCTest < Minitest::Test
   	name = xc.device_name("com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus")
   	assert_equal("iPhone 6 Plus", name)
   end
+
+  def test_invalid_runtime_is_invalid
+    xc = XC.new
+    assert xc.runtime_invalid("notaruntime")
+    refute xc.runtime_invalid("iOS 12.2")
+  end
+
+  def test_invalid_device_type_is_invalid
+    xc = XC.new
+    assert xc.device_type_invalid("Android")
+    refute xc.device_type_invalid("iPhone 6")
+  end
 end

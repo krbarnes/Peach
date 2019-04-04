@@ -17,11 +17,17 @@ class Device
 
 	def create
 		runtime_id = @xc.runtimes.key(@runtime)
-		`xcrun simctl create \"#{@name}\" \"#{@device_type}\" \"#{runtime_id}\"`
+		if @xc.runtime_invalid(@runtime)
+			puts "Unable to create #{@name}. Invalid runtime: #{@runtime}. Run \"xcrun simctl list runtimes\" to list available runtimes"
+		elsif @xc.device_type_invalid(@device_type)
+			puts "Unable to create #{@name}. Invalid device_type: #{@device_type}. Run \"xcrun simctl list devicetypes\" to list available devicetypes"
+		else
+			`xcrun simctl create \"#{@name}\" \"#{@device_type}\" \"#{runtime_id}\"`
 
-		# reload everything to get the device.
-		newDevices = Device.current_devices(xc: @xc).select { |d| d == self }
-		@udid = newDevices.first.udid
+			# reload everything to get the device.
+			newDevices = Device.current_devices(xc: @xc).select { |d| d == self }
+			@udid = newDevices.first.udid
+		end
 	end
 
 	def destroy

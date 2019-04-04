@@ -1,3 +1,6 @@
+- name: POS Next iPad
+  runtime: iOS 12.1
+  device_type: iPad Pro (9.7-inch)
 - name: Small Phone
   runtime: iOS 12.2
   device_type: iPhone SE
