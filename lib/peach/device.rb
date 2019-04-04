@@ -3,25 +3,24 @@ require 'plist'
 class Device
 	attr_reader :name, :device_type, :runtime, :udid
 
-	def initialize(name:, device_type:, runtime:, udid: nil)
+	def initialize(name:, device_type:, runtime:, udid: nil, xc: XC.new)
 		@name = name
 		@device_type = device_type
 		@runtime = runtime
 		@udid = udid
+		@xc = xc
 	end
 
 	def exists?
-		#could pass XC in? Make this a class function?
-		Device.current_devices(xc: XC.new).include?(self)
+		Device.current_devices(xc: @xc).include?(self)
 	end
 
 	def create
-		xc = XC.new
-		runtime_id = xc.runtimes.key(@runtime)
+		runtime_id = @xc.runtimes.key(@runtime)
 		`xcrun simctl create \"#{@name}\" \"#{@device_type}\" \"#{runtime_id}\"`
 
 		# reload everything to get the device.
-		newDevices = Device.current_devices(xc: xc).select { |d| d == self }
+		newDevices = Device.current_devices(xc: @xc).select { |d| d == self }
 		@udid = newDevices.first.udid
 	end
 
@@ -58,7 +57,7 @@ class Device
 				device_name = d["name"]
 				device_udid = d["udid"]
 				device_type = device_type(udid: device_udid, xc: xc)
-				devices << Device.new(name: device_name, device_type: device_type, runtime: runtime, udid: device_udid)
+				devices << Device.new(name: device_name, device_type: device_type, runtime: runtime, udid: device_udid, xc: xc)
 			end
 		end
 

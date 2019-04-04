@@ -9,10 +9,10 @@ class DeviceTest < Minitest::Test
   	Device.destroy_all(xc: @xc)
 
   	# Create 2 devices so the system is in a good state.
-		@device1 = Device.new(name: "🍑👌", device_type: "iPhone 7", runtime: "iOS 12.2")
+		@device1 = Device.new(name: "🍑🍑🍑", device_type: "iPhone 7", runtime: "iOS 12.2", xc: @xc)
   	@device1.create
 
-  	@device2 = Device.new(name: "🍑👌🍑", device_type: "iPhone 8", runtime: "iOS 12.0")
+  	@device2 = Device.new(name: "🍑🍑🍑🍑", device_type: "iPhone 8", runtime: "iOS 12.0", xc: @xc)
   	@device2.create
 	end
 
@@ -27,21 +27,21 @@ class DeviceTest < Minitest::Test
 	end
 
 	def test_equality
-		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: nil)
-		d2 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: "this is real")
+		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: nil, xc: @xc)
+		d2 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: "this is real", xc: @xc)
 		assert_equal d1, d2
-		d2 = Device.new(name:"newish", device_type: "bogus", runtime: "yes", udid: "this is real")
+		d2 = Device.new(name:"newish", device_type: "bogus", runtime: "yes", udid: "this is real", xc: @xc)
 		refute_equal d1, d2
-		d2 = Device.new(name:"new", device_type: "real i swear", runtime: "yes", udid: "this is real")
+		d2 = Device.new(name:"new", device_type: "real i swear", runtime: "yes", udid: "this is real", xc: @xc)
 		refute_equal d1, d2
-		d2 = Device.new(name:"new", device_type: "bogus", runtime: "noe", udid: "this is real")
+		d2 = Device.new(name:"new", device_type: "bogus", runtime: "noe", udid: "this is real", xc: @xc)
 		refute_equal d1, d2
 	end
 
 	def test_exists
-		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: nil)
+		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: nil, xc: @xc)
 		refute d1.exists?
-		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: "bogus_udid")
+		d1 = Device.new(name:"new", device_type: "bogus", runtime: "yes", udid: "bogus_udid", xc: @xc)
 		refute d1.exists?
 
 		devices = Device.current_devices(xc: @xc)
