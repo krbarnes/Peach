@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'elpeacho'
-  s.version     = '0.0.4'
-  s.date        = '2019-04-03'
+  s.version     = '0.0.5'
+  s.date        = '2019-11-21'
   s.summary     = 'Manage your iOS simulators with a yml file.'
   s.description = 'Manage your iOS simulators with a yml file. All of your developers can have the same simulators installed'
   s.authors     = ['Kevin Barnes']
