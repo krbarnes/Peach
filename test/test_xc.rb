@@ -13,27 +13,27 @@ class XCTest < Minitest::Test
 
   def test_runtimes_parsed
   	xc = XC.new
-  	assert_equal(6, xc.runtimes.count)
+  	assert_equal(5, xc.runtimes.count)
   	name = xc.runtime_name("com.apple.CoreSimulator.SimRuntime.iOS-12-0")
   	assert_equal("iOS 12.0", name)
   end
 
   def test_device_types_parsed
   	xc = XC.new
-  	assert_equal(44, xc.device_types.count)
-  	name = xc.device_name("com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus")
-  	assert_equal("iPhone 6 Plus", name)
+  	assert_equal(3, xc.device_types.count)
+  	name = xc.device_name("com.apple.CoreSimulator.SimDeviceType.iPhone-4s")
+  	assert_equal("iPhone 4s", name)
   end
 
   def test_invalid_runtime_is_invalid
     xc = XC.new
     assert xc.runtime_invalid("notaruntime")
-    refute xc.runtime_invalid("iOS 12.2")
+    refute xc.runtime_invalid("iOS 12.0")
   end
 
   def test_invalid_device_type_is_invalid
     xc = XC.new
     assert xc.device_type_invalid("Android")
-    refute xc.device_type_invalid("iPhone 6")
+    refute xc.device_type_invalid("iPhone 4s")
   end
 end

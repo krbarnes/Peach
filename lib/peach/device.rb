@@ -22,11 +22,7 @@ class Device
 		elsif @xc.device_type_invalid(@device_type)
 			puts "Unable to create #{@name}. Invalid device_type: #{@device_type}. Run \"xcrun simctl list devicetypes\" to list available devicetypes"
 		else
-			`xcrun simctl create \"#{@name}\" \"#{@device_type}\" \"#{runtime_id}\"`
-
-			# reload everything to get the device.
-			newDevices = Device.current_devices(xc: @xc).select { |d| d == self }
-			@udid = newDevices.first.udid
+			@udid = `xcrun simctl create \"#{@name}\" \"#{@device_type}\" \"#{runtime_id}\"`.strip
 		end
 	end
 
@@ -45,7 +41,8 @@ class Device
 	#class functions
 
 	def self.destroy_all(xc:)
-		Device.current_devices(xc: xc).each do |d|
+		devices = Device.current_devices(xc: xc) || []
+		devices.each do |d|
 			d.destroy
 		end
 	end
@@ -72,11 +69,12 @@ class Device
 
 	def self.device_type_identifier(udid:, xc:)
 		plist = Plist.parse_xml("#{ENV['HOME']}/Library/Developer/CoreSimulator/Devices/#{udid}/device.plist")
-		plist["deviceType"]
+		plist['deviceType']
 	end
 
 	def self.device_type(udid:, xc:)
-		return xc.device_name(device_type_identifier(udid: udid, xc: xc))
+		device_type_identifier = device_type_identifier(udid: udid, xc: xc)
+		xc.device_name(device_type_identifier)
 	end
 
 	def self.load_devices
